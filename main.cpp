@@ -12,11 +12,15 @@ class Company{
 	public:
 	bool login();
 	void reg();
+	void updateInfo();
+	void viewInfo();
 };
 class Applicant{
 	public:
 	bool login();
 	void reg();
+	void updateInfo();
+	void viewInfo();
 };
 //Multiple Inheritance
 class Vacancy: public Company, public Applicant{
