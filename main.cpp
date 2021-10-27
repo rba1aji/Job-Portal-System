@@ -9,6 +9,8 @@ using namespace std;
 /	 			CLASS
 ***********************************/
 class Company{
+	string name;
+	string description;
 	public:
 	bool login();
 	void reg();
@@ -16,6 +18,9 @@ class Company{
 	void viewInfo();
 };
 class Applicant{
+	string name;
+	string phoneNum;
+	string resume;
 	public:
 	bool login();
 	void reg();
@@ -65,6 +70,14 @@ class Vacancy: public Company, public Applicant{
 		cout<<"Company Registration successfull:)"<<endl;
 	}/**** C Register  ****/
 	
+	void Company::updateInfo(){
+		
+	}
+	
+	void Company::viewInfo(){
+		
+	}
+	
 /***********************************
 /		APPLICANT CLASS METHODS
 ***********************************/
@@ -100,6 +113,16 @@ class Vacancy: public Company, public Applicant{
 		cout<<"Applicant Registration successfull:)"<<endl;
 	}/**** A Register  ****/	
 	
+	void Applicant::updateInfo(){
+		cout<<"Enter Full Name: ";	cin>>name;
+		cout<<"Enter Phone Number: ";	cin>>phoneNum;
+		cout<<"Enter Resume Link: ";	cin>>resume;
+	}
+	
+	void Applicant::viewInfo(){
+		
+	}
+	
 /***********************************
 /		VACANCY D-CLASS METHODS
 ***********************************/
@@ -109,7 +132,12 @@ class Vacancy: public Company, public Applicant{
 		cin>>vacancyDetails;
 	}
 	void Vacancy::viewVacancy(){
-		cout<<"No vacancies available at this time.. Check back Later..\n";
+/*		if(vacancyDetails=="NULL"){
+			cout<<"No vacancies available at this time.. Check back Later..\n";
+		}
+		else{*/
+			cout<<vacancyDetails<<"\n";
+//		}
 	}
 
 /***********************************
@@ -118,7 +146,9 @@ class Vacancy: public Company, public Applicant{
 
 	void proceedA(){
 			Vacancy V;
-			cout<<"\n1.View Job Vacancies\n2.View Applicant Info\n3.Update Applicant Info\n";
+			Applicant A;
+			
+			cout<<"\n1.View Job Vacancies\n2.View Applicant Info\n3.Update Applicant Info\n4.Main Menu\n";
 			int c2; cin>>c2;
 			switch(c2){
 				case 1:
@@ -126,9 +156,11 @@ class Vacancy: public Company, public Applicant{
 				break;
 				
 				case 2:
+				A.viewInfo();
 				break;
 				
 				case 3:
+				A.updateInfo();
 				break;
 				
 				default:
@@ -138,19 +170,30 @@ class Vacancy: public Company, public Applicant{
 			}
 	}/**** Proceed A ****/
 	
-		void proceedC(){
+		int proceedC(){
 			Vacancy V;
-			cout<<"\n1.Post Job Vacancies\n2.View Company Info\n3.Update Company Info\n";
+			Company C;
+			
+			cout<<"\n1.Post Job Vacancies\n2.View Company Info\n3.Update Company Info\n4.Logout\n";
 			int c3; cin>>c3;
 			switch(c3){
 				case 1:
 				V.postVacancy();
+				proceedC();
 				break;
 				
 				case 2:
+				C.updateInfo();
+				proceedC();
 				break;
 				
 				case 3:
+				C.viewInfo();
+				proceedC();
+				break;
+				
+				case 4:
+				return 1;
 				break;
 				
 				default:
@@ -198,9 +241,14 @@ int main(){
 			main();
 		}
 		else if(tmp2==true){
-			proceedC();
+			while(true){
+				if(proceedC()==1){
+				main();
+				}
+			}
 		}
 		break;
+		
 		
 /*4*/ case 4:
 		C.reg();
