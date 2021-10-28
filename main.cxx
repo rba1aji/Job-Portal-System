@@ -10,7 +10,7 @@ using namespace std;
 ***********************************/
 class Company{
 	string name;
-	string description;
+	string about;
 	public:
 	bool login();
 	void reg();
@@ -71,7 +71,8 @@ class Vacancy: public Company, public Applicant{
 	}/**** C Register  ****/
 	
 	void Company::updateInfo(){
-		
+		cout<<"Enter Company Name: "; cin>>name;
+		cout<<"Enter About Company: "; cin>>about;
 	}
 	
 	void Company::viewInfo(){
@@ -114,14 +115,20 @@ class Vacancy: public Company, public Applicant{
 	}/**** A Register  ****/	
 	
 	void Applicant::updateInfo(){
-		cout<<"Enter Full Name: ";	cin>>name;
-		cout<<"Enter Phone Number: ";	cin>>phoneNum;
-		cout<<"Enter Resume Link: ";	cin>>resume;
-	}
+	  cout<<"Enter Full Name: ";	
+		cin>>name;
+  	cout<<"Enter Phone Number: ";
+		cin>>phoneNum;
+		cout<<"Enter Resume Link: ";
+		cin>>resume;
+	}/**** Update Info ****/
 	
 	void Applicant::viewInfo(){
+		cout<<"Name: "<<name<<"\n";
+		cout<<"Phone no.: "<<phoneNum<<"\n";
+		cout<<"Resume link: "<<resume<<"\n";
 		
-	}
+	}/**** View Info ****/
 	
 /***********************************
 /		VACANCY D-CLASS METHODS
@@ -144,10 +151,10 @@ class Vacancy: public Company, public Applicant{
 /	   USER DIFINED FUNCTIONS
 ***********************************/
 
-	void proceedA(){
+	int proceedA(){
 			Vacancy V;
 			Applicant A;
-			
+		while(true){
 			cout<<"\n1.View Job Vacancies\n2.View Applicant Info\n3.Update Applicant Info\n4.Main Menu\n";
 			int c2; cin>>c2;
 			switch(c2){
@@ -163,33 +170,36 @@ class Vacancy: public Company, public Applicant{
 				A.updateInfo();
 				break;
 				
+				case 4:
+				return 1;
+				break;
+				
 				default:
 				cout<<"Invalid Key:(\n";
-				proceedA();
+				return 0;
 				break;
 			}
+		}
 	}/**** Proceed A ****/
 	
 		int proceedC(){
 			Vacancy V;
 			Company C;
-			
+		
+		while(true){
 			cout<<"\n1.Post Job Vacancies\n2.View Company Info\n3.Update Company Info\n4.Logout\n";
 			int c3; cin>>c3;
 			switch(c3){
 				case 1:
 				V.postVacancy();
-				proceedC();
 				break;
 				
 				case 2:
-				C.updateInfo();
-				proceedC();
+				C.viewInfo();
 				break;
 				
 				case 3:
-				C.viewInfo();
-				proceedC();
+				C.updateInfo();
 				break;
 				
 				case 4:
@@ -198,9 +208,10 @@ class Vacancy: public Company, public Applicant{
 				
 				default:
 				cout<<"Invalid Key:(\n";
-				proceedC();
+				return 0;
 				break;
 			}
+		}
 	}/**** Proceed C ****/
 	
 /***********************************
@@ -225,7 +236,11 @@ int main(){
 			main();
 		}
 		else if(tmp1==true){
-			proceedA();
+			while(true){
+				if(proceedA()==1){
+				main();
+				}
+			}
 		}
 		break;
 		
