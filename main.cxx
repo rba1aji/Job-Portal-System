@@ -109,8 +109,9 @@ class Vacancy: public Company, public Applicant{
 		
 		ofstream file;
 		file.open("applicant\\"+username+".txt");
-		file<<username<<"\n"<<password;
+	file<<username<<"\n"<<password;
 		file.close();
+		
 		cout<<"Applicant Registration successfull:)"<<endl;
 	}/**** A Register  ****/	
 	
@@ -137,14 +138,20 @@ class Vacancy: public Company, public Applicant{
 	void Vacancy::postVacancy(){
 		cout<<"Enter job vacancy details:\n\t";
 		cin>>vacancyDetails;
+		
+		ofstream file;
+		file.open("Vacancy.txt");
+		file<<vacancyDetails;
+		file.close();
 	}
 	void Vacancy::viewVacancy(){
-/*		if(vacancyDetails=="NULL"){
-			cout<<"No vacancies available at this time.. Check back Later..\n";
-		}
-		else{*/
-			cout<<vacancyDetails<<"\n";
-//		}
+		string temp;
+		
+		ifstream file("Vacancy.txt");
+		getline(file, temp);
+		file.close();
+		
+		cout<<temp<<"\n";
 	}
 
 /***********************************
