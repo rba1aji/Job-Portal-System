@@ -77,8 +77,10 @@ class Vacancy: public Company, public Applicant{
 	}/**** C Register  ****/
 	
 	void Company::updateInfo(){
-		cout<<"Enter Company Name: "; cin>>name;
-		cout<<"Enter About Company: "; cin>>about;
+		cout<<"Enter Company Name: "; 
+		getline(cin>>ws,name); //whitespace
+		cout<<"Enter About Company: ";
+		getline(cin>>ws,about);
 		
 		ofstream file;
 		file.open("Cinfo\\"+Cun+".txt");
@@ -94,6 +96,7 @@ class Vacancy: public Company, public Applicant{
 			cout<<temp<<"\n";
 		}
 		file.close();
+		
 	}/**** C viewInfo ****/
 	
 /***********************************
@@ -132,19 +135,30 @@ class Vacancy: public Company, public Applicant{
 	}/**** A Register  ****/	
 	
 	void Applicant::updateInfo(){
+	  
+		cout<<"Aun="<<Aun<<"\n";
 	  cout<<"Enter Full Name: ";	
-		cin>>name;
+		getline(cin>>ws,name);
   	cout<<"Enter Phone Number: ";
 		cin>>phoneNum;
 		cout<<"Enter Resume Link: ";
-		cin>>resume;
+		getline(cin>>ws,resume);
+		
+		ofstream file;
+		file.open("Ainfo\\"+Aun+".txt");
+		file<<"Name: "<<name<<"\nPhone no.: "<<phoneNum<<"\nResume: "<<resume;
+		file.close();
 	}/**** Update Info ****/
 	
 	void Applicant::viewInfo(){
-		cout<<"Name: "<<name<<"\n";
-		cout<<"Phone no.: "<<phoneNum<<"\n";
-		cout<<"Resume link: "<<resume<<"\n";
-		
+		string temp;
+		cout<<"Aun="<<Aun<<"\n";
+		ifstream file("Ainfo\\"+Aun+".txt");
+		while(getline(file,temp)){
+			cout<<temp<<"\n";
+		}
+		file.close();
+
 	}/**** View Info ****/
 	
 /***********************************
@@ -153,7 +167,7 @@ class Vacancy: public Company, public Applicant{
 
 	void Vacancy::postVacancy(){
 		cout<<"Enter job vacancy details:\n\t";
-		cin>>vacancyDetails;
+		getline(cin>>ws,vacancyDetails);
 		
 		ofstream file;
 		file.open("Vacancy.txt");
@@ -293,7 +307,6 @@ int main(){
 			}
 		}
 		break;
-		
 		
 /*4*/ case 4:
 		C.reg();
