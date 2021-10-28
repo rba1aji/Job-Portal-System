@@ -6,6 +6,13 @@
 #include<string>
 using namespace std;
 /***********************************
+/			GLOBAL VARIABLES
+***********************************/
+int x=1; //stop title repeatation
+string Cun,Cpw,Aun,Apw;
+//Companyusername,Applicantpassword
+
+/***********************************
 /	 			CLASS
 ***********************************/
 class Company{
@@ -59,13 +66,12 @@ class Vacancy: public Company, public Applicant{
 	}/**** C Login ****/
 	
 	void Company::reg(){
-		string username,password;
-		cout<<"Pick Username: "; cin>>username;
-		cout<<"Pick Password: "; cin>>password;
+		cout<<"Pick Username: "; cin>>Cun;
+		cout<<"Pick Password: "; cin>>Cpw;
 		
 		ofstream file;
-		file.open("company\\"+username+".txt");
-		file<<username<<"\n"<<password;
+		file.open("company\\"+Cun+".txt");
+		file<<Cun<<"\n"<<Cpw;
 		file.close();
 		cout<<"Company Registration successfull:)"<<endl;
 	}/**** C Register  ****/
@@ -73,11 +79,22 @@ class Vacancy: public Company, public Applicant{
 	void Company::updateInfo(){
 		cout<<"Enter Company Name: "; cin>>name;
 		cout<<"Enter About Company: "; cin>>about;
-	}
+		
+		ofstream file;
+		file.open("Cinfo\\"+Cun+".txt");
+		file<<"Name: "<<name<<"\nAbout: "<<about;
+		file.close();
+		
+	}/**** C updateInfo ****/
 	
 	void Company::viewInfo(){
-		
-	}
+		string temp;
+		ifstream file("Cinfo\\"+Cun+".txt");
+		while(getline(file,temp)){
+			cout<<temp<<"\n";
+		}
+		file.close();
+	}/**** C viewInfo ****/
 	
 /***********************************
 /		APPLICANT CLASS METHODS
@@ -103,13 +120,12 @@ class Vacancy: public Company, public Applicant{
 	}/**** A Login ****/
 	
 	void Applicant::reg(){
-		string username,password;
-		cout<<"Pick Username: "; cin>>username;
-		cout<<"Pick Password: "; cin>>password;
+		cout<<"Pick Username: "; cin>>Aun;
+		cout<<"Pick Password: "; cin>>Apw;
 		
 		ofstream file;
-		file.open("applicant\\"+username+".txt");
-	file<<username<<"\n"<<password;
+		file.open("applicant\\"+Aun+".txt");
+	file<<Aun<<"\n"<<Apw;
 		file.close();
 		
 		cout<<"Applicant Registration successfull:)"<<endl;
@@ -162,7 +178,7 @@ class Vacancy: public Company, public Applicant{
 			Vacancy V;
 			Applicant A;
 		while(true){
-			cout<<"\n1.View Job Vacancies\n2.View Applicant Info\n3.Update Applicant Info\n4.Main Menu\n";
+			cout<<"\n1.View Job Vacancies\n2.View Applicant Info\n3.Update Applicant Info\n4.Logout\n";
 			int c2; cin>>c2;
 			switch(c2){
 				case 1:
@@ -231,6 +247,13 @@ int main(){
 	Vacancy V;
 	
 	bool tmp1,tmp2;
+
+	while(true){
+		if(x==0) break;
+		else
+		cout<<"\t\t ONLINE JOB PORTAL SYSTEM\t\t\n";
+		x--;
+	}
 	
 	cout<<"\n1.Applicant Login\n2.Applicant Register\n3.Company Login\n4.Company Register\n";
 	
