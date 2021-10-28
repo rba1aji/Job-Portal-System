@@ -47,15 +47,15 @@ class Vacancy: public Company, public Applicant{
 ***********************************/
 
 		bool Company::login(){
-		string username,password,un,pw;
-		cout<<"Enter Username: "; cin>>username;
-		cout<<"Enter Password: "; cin>>password;
+		string username,password;
+		cout<<"Enter Username: "; cin>>Cun;
+		cout<<"Enter Password: "; cin>>Cpw;
 		
-		ifstream read("company\\"+username+".txt");
-		getline(read,un);
-		getline(read,pw);
+		ifstream read("company\\"+Cun+".txt");
+		getline(read,username);
+		getline(read,password);
 		
-		if(un==username && pw==password){
+		if(username==Cun && password==Cpw){
 			cout<<"Company Login Successful:)"<<endl;
 			return true;
 		}
@@ -63,6 +63,7 @@ class Vacancy: public Company, public Applicant{
 			cout<<"Company Login Faild:("<<endl;
 			return false;
 		}
+		
 	}/**** C Login ****/
 	
 	void Company::reg(){
@@ -78,10 +79,11 @@ class Vacancy: public Company, public Applicant{
 	
 	void Company::updateInfo(){
 		cout<<"Enter Company Name: "; 
-		getline(cin>>ws,name); //whitespace
+		getline(cin>>ws,name);
 		cout<<"Enter About Company: ";
 		getline(cin>>ws,about);
-		
+		// ws - whitespace
+
 		ofstream file;
 		file.open("Cinfo\\"+Cun+".txt");
 		file<<"Name: "<<name<<"\nAbout: "<<about;
@@ -90,13 +92,13 @@ class Vacancy: public Company, public Applicant{
 	}/**** C updateInfo ****/
 	
 	void Company::viewInfo(){
+		
 		string temp;
 		ifstream file("Cinfo\\"+Cun+".txt");
 		while(getline(file,temp)){
 			cout<<temp<<"\n";
 		}
 		file.close();
-		
 	}/**** C viewInfo ****/
 	
 /***********************************
@@ -104,15 +106,15 @@ class Vacancy: public Company, public Applicant{
 ***********************************/
 
 	bool Applicant::login(){
-		string username,password,un,pw;
-		cout<<"Enter Username: "; cin>>username;
-		cout<<"Enter Password: "; cin>>password;
+		string username,password;
+		cout<<"Enter Username: "; cin>>Aun;
+		cout<<"Enter Password: "; cin>>Apw;
 		
-		ifstream read("applicant\\"+username+".txt");
-		getline(read,un);
-		getline(read,pw);
+		ifstream read("applicant\\"+Aun+".txt");
+		getline(read,username);
+		getline(read,password);
 		
-		if(un==username && pw==password){
+		if(username==Aun && password==Apw){
 			cout<<"Applicant Login Successful:)"<<endl;
 			return true;
 		}
@@ -120,6 +122,7 @@ class Vacancy: public Company, public Applicant{
 			cout<<"Applicant Login Faild:("<<endl;
 			return false;
 		}
+		
 	}/**** A Login ****/
 	
 	void Applicant::reg(){
@@ -132,14 +135,13 @@ class Vacancy: public Company, public Applicant{
 		file.close();
 		
 		cout<<"Applicant Registration successfull:)"<<endl;
+		
 	}/**** A Register  ****/	
 	
 	void Applicant::updateInfo(){
-	  
-		cout<<"Aun="<<Aun<<"\n";
-	  cout<<"Enter Full Name: ";	
+		cout<<"Enter Full Name: ";	
 		getline(cin>>ws,name);
-  	cout<<"Enter Phone Number: ";
+		cout<<"Enter Phone Number: ";
 		cin>>phoneNum;
 		cout<<"Enter Resume Link: ";
 		getline(cin>>ws,resume);
@@ -148,18 +150,16 @@ class Vacancy: public Company, public Applicant{
 		file.open("Ainfo\\"+Aun+".txt");
 		file<<"Name: "<<name<<"\nPhone no.: "<<phoneNum<<"\nResume: "<<resume;
 		file.close();
-	}/**** Update Info ****/
+	}/**** A Update Info ****/
 	
 	void Applicant::viewInfo(){
 		string temp;
-		cout<<"Aun="<<Aun<<"\n";
 		ifstream file("Ainfo\\"+Aun+".txt");
 		while(getline(file,temp)){
 			cout<<temp<<"\n";
 		}
 		file.close();
-
-	}/**** View Info ****/
+	}/**** A View Info ****/
 	
 /***********************************
 /		VACANCY D-CLASS METHODS
@@ -173,7 +173,8 @@ class Vacancy: public Company, public Applicant{
 		file.open("Vacancy.txt");
 		file<<vacancyDetails;
 		file.close();
-	}
+		
+	}/**** Post Vacancy ****/
 	void Vacancy::viewVacancy(){
 		string temp;
 		
@@ -182,7 +183,8 @@ class Vacancy: public Company, public Applicant{
 		file.close();
 		
 		cout<<temp<<"\n";
-	}
+		
+	}/**** View Vacancy ****/
 
 /***********************************
 /	   USER DIFINED FUNCTIONS
@@ -323,3 +325,5 @@ int main(){
 /***********************************
 /				THE END
 ***********************************/
+/*/    	©oded by rba1aji	 	/*/
+/***********************************/
