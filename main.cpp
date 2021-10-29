@@ -56,11 +56,11 @@ class Vacancy: public Company, public Applicant{
 		getline(read,password);
 		
 		if(username==Cun && password==Cpw){
-			cout<<"Company Login Successful:)"<<endl;
+			cout<<"\nCompany Login Successful:)";
 			return true;
 		}
 		else{
-			cout<<"Company Login Faild:("<<endl;
+			cout<<"\nCompany Login Faild:(";
 			return false;
 		}
 		
@@ -74,7 +74,7 @@ class Vacancy: public Company, public Applicant{
 		file.open("company\\"+Cun+".txt");
 		file<<Cun<<"\n"<<Cpw;
 		file.close();
-		cout<<"Company Registration successfull:)"<<endl;
+		cout<<"\nCompany Registration successfull:)";
 	}/**** C Register  ****/
 	
 	void Company::updateInfo(){
@@ -115,11 +115,11 @@ class Vacancy: public Company, public Applicant{
 		getline(read,password);
 		
 		if(username==Aun && password==Apw){
-			cout<<"Applicant Login Successful:)"<<endl;
+			cout<<"\nApplicant Login Successful:)";
 			return true;
 		}
 		else{
-			cout<<"Applicant Login Faild:("<<endl;
+			cout<<"\nApplicant Login Faild:("{:;
 			return false;
 		}
 		
@@ -134,7 +134,7 @@ class Vacancy: public Company, public Applicant{
 	file<<Aun<<"\n"<<Apw;
 		file.close();
 		
-		cout<<"Applicant Registration successfull:)"<<endl;
+		cout<<"\nApplicant Registration successfull:)"<<endl;
 		
 	}/**** A Register  ****/	
 	
@@ -194,7 +194,7 @@ class Vacancy: public Company, public Applicant{
 			Vacancy V;
 			Applicant A;
 		while(true){
-			cout<<"\n1.View Job Vacancies\n2.View Applicant Info\n3.Update Applicant Info\n4.Logout\n";
+			cout<<"\nJOB SEEKER MENU\n1.View Job Vacancies\n2.View Applicant Info\n3.Update Applicant Info\n4.Logout\n";
 			int c2; cin>>c2;
 			switch(c2){
 				case 1:
@@ -226,7 +226,7 @@ class Vacancy: public Company, public Applicant{
 			Company C;
 		
 		while(true){
-			cout<<"\n1.Post Job Vacancies\n2.View Company Info\n3.Update Company Info\n4.Logout\n";
+			cout<<"\nRECRUITER MENU\n1.Post Job Vacancies\n2.View Company Info\n3.Update Company Info\n4.Logout\n";
 			int c3; cin>>c3;
 			switch(c3){
 				case 1:
@@ -271,7 +271,7 @@ int main(){
 		x--;
 	}
 	
-	cout<<"\n1.Applicant Login\n2.Applicant Register\n3.Company Login\n4.Company Register\n";
+	cout<<"\nMAIN MENU\n1.Applicant Login\n2.Applicant Register\n3.Company Login\n4.Company Register\n";
 	
 	int c1; cin>>c1;
 	switch(c1){
