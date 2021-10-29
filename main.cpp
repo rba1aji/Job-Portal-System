@@ -119,7 +119,7 @@ class Vacancy: public Company, public Applicant{
 			return true;
 		}
 		else{
-			cout<<"\nApplicant Login Faild:("{:;
+			cout<<"\nApplicant Login Faild:(";
 			return false;
 		}
 		
