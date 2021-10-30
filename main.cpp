@@ -194,7 +194,7 @@ class Vacancy: public Company, public Applicant{
 			Vacancy V;
 			Applicant A;
 		while(true){
-			cout<<"\nJOB SEEKER MENU\n1.View Job Vacancies\n2.View Applicant Info\n3.Update Applicant Info\n4.Logout\n";
+			cout<<"\n\nJOB SEEKER MENU\n1.View Job Vacancies\n2.View Applicant Info\n3.Update Applicant Info\n4.Logout\n";
 			int c2; cin>>c2;
 			switch(c2){
 				case 1:
@@ -226,7 +226,7 @@ class Vacancy: public Company, public Applicant{
 			Company C;
 		
 		while(true){
-			cout<<"\nRECRUITER MENU\n1.Post Job Vacancies\n2.View Company Info\n3.Update Company Info\n4.Logout\n";
+			cout<<"\n\nRECRUITER MENU\n1.Post Job Vacancies\n2.View Company Info\n3.Update Company Info\n4.Logout\n";
 			int c3; cin>>c3;
 			switch(c3){
 				case 1:
