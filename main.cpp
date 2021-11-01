@@ -8,9 +8,10 @@ using namespace std;
 /***********************************
 /			GLOBAL VARIABLES
 ***********************************/
-int x=1; //stop title repeatation
+
+int x=1; //terminate title repeatation
 string Cun,Cpw,Aun,Apw;
-//Companyusername,Applicantpassword
+//Company username,Applicant password
 
 /***********************************
 /	 			CLASS
@@ -292,6 +293,7 @@ int main(){
 		
 /*2*/ case 2:
 		A.reg();
+		cout<<"\n";
 		main();
 		break;
 		
@@ -312,6 +314,7 @@ int main(){
 		
 /*4*/ case 4:
 		C.reg();
+		cout<<"\n";
 		main();
 		break;
 		
@@ -325,5 +328,3 @@ int main(){
 /***********************************
 /				THE END
 ***********************************/
-/*/    	©oded by rba1aji	 	/*/
-/***********************************/
