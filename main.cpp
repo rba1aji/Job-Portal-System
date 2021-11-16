@@ -12,6 +12,7 @@ using namespace std;
 int x=1; //terminate title repeatation
 string Cun,Cpw,Aun,Apw;
 //Company username,Applicant password
+int vacancyCount=0;
 
 /***********************************
 /	 			CLASS
@@ -169,21 +170,24 @@ class Vacancy: public Company, public Applicant{
 	void Vacancy::postVacancy(){
 		cout<<"Enter job vacancy details:\n\t";
 		getline(cin>>ws,vacancyDetails);
+		vacancyDetails+="\n";
 		
-		ofstream file;
-		file.open("Vacancy.txt");
-		file<<vacancyDetails;
+		ofstream file; //stream object
+		file.open("Vacancy.txt",ios::app);
+		file<<vacancyCount<<"."<<vacancyDetails;
 		file.close();
 		
 	}/**** Post Vacancy ****/
 	void Vacancy::viewVacancy(){
-		string temp;
+		char temp;
 		
 		ifstream file("Vacancy.txt");
-		getline(file, temp);
+		while(file.get(temp)){
+			cout<<temp;
+		}
 		file.close();
 		
-		cout<<temp<<"\n";
+		cout<<"\n";
 		
 	}/**** View Vacancy ****/
 
@@ -231,6 +235,7 @@ class Vacancy: public Company, public Applicant{
 			int c3; cin>>c3;
 			switch(c3){
 				case 1:
+				vacancyCount++;
 				V.postVacancy();
 				break;
 				
