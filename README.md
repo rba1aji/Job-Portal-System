@@ -74,8 +74,9 @@ Step 7: Logout<br/>
 
 ## Techniques to be used for the project implementation
 > Object Oriented Programming
-- Class <br/>
-- Inheritance <br/>
-- Friend function<br/>
+- Class
+- Inheritance
+  - Multiple inheritance
+- Friend function
 > Server side programming
 - Files
