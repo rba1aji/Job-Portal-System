@@ -77,6 +77,5 @@ Step 7: Logout<br/>
 - Class
 - Inheritance
   - Multiple inheritance
-- Friend function
 > Server side programming
 - Files
