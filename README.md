@@ -72,4 +72,11 @@ Step 5: Apply for job<br/>
 Step 6: View status of application<br/>
 Step 7: Logout<br/>
 
-
+## Techniques to be used 
+for the project implementation
+###### Object Oriented Programming
+- Class
+- Inheritance
+–- Multiple inheritance
+- Friend function
+###### Files
