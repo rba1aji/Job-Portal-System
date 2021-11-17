@@ -29,3 +29,28 @@ use.
 - The Internet plays an important role in the area of human resource planning 
 and development. In the age of technology, the Internet has become the 
 main source of information for jobseekers.
+## Existing System
+- There are few existing systems available with the same concept. But 
+not the exactly same and not efficient.
+- The existing methods involves some drawbacks such as a job seeker 
+can able to search job opportunities online but not in one place. Job 
+seekers need to use multiple resources to know multiple the job 
+opportunities and vacancies available.
+- After attanding the job interviews, only the selected candidates are 
+being informed. And the candidates who were not selected by the 
+company, are not informed by lot of companies. They were waiting for 
+the result and lacks of time.
+
+## Proposed System
+- The proposed system provides the information about Multiple Job 
+Opportunities from multiple companies in one place.
+- Also the opportunities can be posted by a recruiting company itself, so that 
+the information would be trustable.
+- The proposed system of job portal works as a medium between job 
+offering company and job seeking applicants.
+- Job seekers can update their profile, view all the job opportunities available 
+and apply for the same. They will be informed the status of their 
+applications.
+
+
+
