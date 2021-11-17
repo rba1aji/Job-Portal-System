@@ -55,4 +55,21 @@ applications.
 ## Block Diagram of proposed System
 ![](IMG_20211117_112122.jpg)
 
+## Algorithm
+#### Company:
+Step 1: Start<br/>
+Step 2: Register/Login<br/>
+Step 3: Update company information<br/>
+Step 4: Post job opportunities and details<br/>
+Step 5: Recruite employee<br/>
+Step 6: Logout<br/>
+#### Job Seeker:
+Step 1: Start <br/>
+Step 2: Register/Login <br/>
+Step 3: Update information - name, phone no., resume.<br/>
+Step 4: View job opportunities<br/>
+Step 5: Apply for job<br/>
+Step 6: View status of application<br/>
+Step 7: Logout<br/>
+
 
