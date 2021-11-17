@@ -79,3 +79,13 @@ Step 7: Logout<br/>
   - Multiple inheritance
 > Server side programming
 - Files
+
+## Expected Outcomes 
+* The project Online Job Portal has been successfully designed and tested. 
+It has developed by integrating entire software used in this project.
+* The presence of any information has been reasoned and placed carefully 
+thus contribute to the best work of the units.
+* Besides that, this system can reduce lacks of time to search job 
+opportunities and could help to get employed.
+* By using this system, companies can recruit skilled employees and the 
+unemployed graduates or final year students can get good job.
