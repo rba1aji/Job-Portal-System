@@ -53,6 +53,6 @@ and apply for the same. They will be informed the status of their
 applications.
 
 ## Block Diagram of proposed System
-![]()
+![](IMG_20211117_112122.jpg)
 
 
