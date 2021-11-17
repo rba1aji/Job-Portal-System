@@ -16,7 +16,7 @@ can view job opportunities and keep applying.
 - Using Object Oriented Programming concepts, the job portal can be managed.
 
 ## Literature Survey
-#### Job Seeking: Old and New Ways
+> Job Seeking: Old and New Ways
 - In old days job seekers have to involve different complicated ways to look for 
 jobs such as through News papers, job agency office, advertisements in TV 
 and radio etc. Before the Internet, became widely uses as a method of 
