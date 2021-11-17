@@ -53,7 +53,7 @@ and apply for the same. They will be informed the status of their
 applications.
 
 ## Block Diagram of proposed System
-![](IMG_20211117_112122.jpg)
+![Block diagram](block-diagram.jpg)
 
 ## Algorithm
 #### Company:
@@ -79,6 +79,9 @@ Step 7: Logout<br/>
   - Multiple inheritance
 > Server side programming
 - Files
+
+## Simulation Diagram and Results
+![Simulation Diagram](simulation-diagram.jpg)
 
 ## Expected Outcomes 
 * The project Online Job Portal has been successfully designed and tested. 
