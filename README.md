@@ -52,5 +52,7 @@ offering company and job seeking applicants.
 and apply for the same. They will be informed the status of their 
 applications.
 
+## Block Diagram of proposed System
+![]()
 
 
