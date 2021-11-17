@@ -77,6 +77,5 @@ for the project implementation
 <h5>Object Oriented Programming</h5>
 - Class
 - Inheritance
-–- Multiple inheritance
 - Friend function
 <h5> Files</h5>
