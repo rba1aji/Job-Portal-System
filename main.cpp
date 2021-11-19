@@ -12,7 +12,11 @@ using namespace std;
 int x=1; //terminate title repeatation
 string Cun,Cpw,Aun,Apw;
 //Company username,Applicant password
-int vacancyCount=0;
+
+	/*	ofstream vfile;
+		vfile.open("Vac_Count.txt");
+		vfile<<0;
+		vfile.close();*/
 
 /***********************************
 /	 			CLASS
@@ -39,7 +43,9 @@ class Applicant{
 //Multiple Inheritance
 class Vacancy: public Company, public Applicant{
 	string vacancyDetails;
+	int vacancyCount=0;
 	public:
+	void Vacancy_Count();
 	void postVacancy();
 	void viewVacancy();
 };
@@ -85,6 +91,11 @@ class Vacancy: public Company, public Applicant{
 		cout<<"Enter About Company: ";
 		getline(cin>>ws,about);
 		// ws - whitespace
+		
+		ofstream File;
+		File.open("Cname\\"+Cun+".txt");
+		File<<name;
+		File.close();
 
 		ofstream file;
 		file.open("Cinfo\\"+Cun+".txt");
@@ -167,14 +178,23 @@ class Vacancy: public Company, public Applicant{
 /		VACANCY D-CLASS METHODS
 ***********************************/
 
+	void Vacancy::Vacancy_Count(){
+		vacancyCount++;
+	}/*Vacancy Count*/
+
 	void Vacancy::postVacancy(){
 		cout<<"Enter job vacancy details:\n\t";
 		getline(cin>>ws,vacancyDetails);
 		vacancyDetails+="\n";
 		
+		ifstream File("Cname\\"+Cun+".txt");
+		string Cname;
+		getline(File,Cname);
+		File.close();
+		
 		ofstream file; //stream object
 		file.open("Vacancy.txt",ios::app);
-		file<<vacancyCount<<"."<<vacancyDetails;
+		file<<vacancyCount<<"."<<Cname<<" >> "<<vacancyDetails;
 		file.close();
 		
 	}/**** Post Vacancy ****/
@@ -235,7 +255,7 @@ class Vacancy: public Company, public Applicant{
 			int c3; cin>>c3;
 			switch(c3){
 				case 1:
-				vacancyCount++;
+				V.Vacancy_Count();
 				V.postVacancy();
 				break;
 				
