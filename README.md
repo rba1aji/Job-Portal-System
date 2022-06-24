@@ -1,6 +1,10 @@
 # Job Portal System
-A C++ mini project with object Oriented Programming. This is a basic implementation.
+A C++ mini project with object Oriented Programming. This is only C++ implementation.
+<br/>Main concepts: Object Oriented Programming, Files in C++
 <br/>
+<br/>
+<br/>
+documentation below done for just academic's sake
 ## Abstract
 - India has one of the highest youth population in the world. One of the major 
 social issues in India is unemployment.
