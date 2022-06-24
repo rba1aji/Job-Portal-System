@@ -1,6 +1,6 @@
 # Job Portal System
-A C++ mini project with object Oriented Programming. This is only C++ implementation.
-<br/>Main concepts: Object Oriented Programming, Files in C++
+A C++ mini project for object Oriented Programming. This is only C++ implementation.
+<br/><b>Main concepts:</b> Object Oriented Programming, Files in C++
 <br/>
 <br/>
 <br/>
